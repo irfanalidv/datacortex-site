@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataCortex | Powering Innovation with AI & Cloud Solutions</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        color: #333333; /* Dark gray for text */
+        line-height: 1.6;
+        background-color: #f4f4f4; /* Light gray for background */
+      }
+
+      header,
+      footer {
+        background: #1b2838; /* Dark blue for footer and header */
+        color: #fff;
+        padding: 1em 0;
+      }
+
+      .container {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .logo h1 {
+        font-size: 1.8em;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #f39c12; /* Button hover color */
+      }
+
+      /* Hide the nav links on mobile */
+      .menu-toggle {
+        display: none;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://live.staticflickr.com/4588/39050702262_02165291f2_z.jpg")
+          no-repeat center center/cover;
+        filter: grayscale(100%);
+        z-index: -1;
+        opacity: 0.8; /* Adjust opacity if needed */
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+      }
+
+      .hero p {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+      }
+
+      .btn {
+        background: #f39c12;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background: #e67e22;
+      }
+
+      /* About Section */
+      #about {
+        padding: 60px 20px;
+        background: #f4f4f4; /* Light gray background */
+      }
+
+      #about h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2a5298; /* Accent blue */
+      }
+
+      #about p {
+        font-size: 1.2em;
+        color: #555555; /* Lighter gray for readability */
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* Services Section */
+      #services {
+        padding: 60px 20px;
+        background: #ffffff; /* White background for a clean look */
+      }
+
+      #services h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2a5298; /* Accent blue */
+      }
+
+      #services p {
+        font-size: 1.2em;
+        color: #555555;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .services-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .services-item {
+        flex: 1 1 calc(33% - 20px);
+        margin: 10px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .services-item h3 {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #2a5298; /* Accent blue for titles */
+      }
+
+      .services-item p {
+        font-size: 1em;
+        color: #555555;
+      }
+
+      /* Projects Section */
+      #projects {
+        padding: 60px 20px;
+        background: #f4f4f4; /* Light gray background */
+      }
+
+      #projects h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2a5298;
+      }
+
+      #projects p {
+        font-size: 1.2em;
+        color: #555555;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .projects-item {
+        flex: 1 1 calc(50% - 20px);
+        margin: 10px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .projects-item h3 {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #2a5298;
+      }
+
+      .projects-item p {
+        font-size: 1em;
+        color: #555555;
+      }
+
+      /* Clients Section */
+      #clients {
+        padding: 60px 20px;
+        background: #ffffff; /* White for clean background */
+        text-align: center;
+      }
+
+      .logo-grid {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 0;
+        flex-wrap: wrap; /* Allow items to wrap */
+      }
+
+      .logo-grid img {
+        max-width: 150px;
+        height: auto;
+        filter: grayscale(100%);
+        opacity: 0.8;
+        transition: opacity 0.3s ease, filter 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .logo-grid img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      /* Partners Section */
+      #partners {
+        padding: 20px 20px; /* Reduced padding */
+        background: #f9f9f9;
+        text-align: center;
+      }
+
+      #partners p {
+        font-size: 1.2em;
+        color: #555555;
+        margin-bottom: 10px; /* Reduced margin */
+      }
+
+      .partners-logo-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* Spacing between logo and text */
+        flex-wrap: wrap;
+      }
+
+      .partners-logo-row img {
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 0;
+      }
+
+      .partners-logo-row p {
+        font-size: 1.1em;
+        color: #333333;
+        margin-top: 0;
+      }
+
+      /* Contact Section */
+      #contact {
+        padding: 40px 20px; /* Adjusted padding for consistency */
+        background: #f9f9f9;
+        text-align: center;
+      }
+
+      #contact h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px; /* Reduced gap between title and content */
+      }
+
+      #contact p {
+        font-size: 1.2em;
+        color: #555555;
+        margin-bottom: 10px; /* Reduced margin for a tighter layout */
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #1b2838; /* Dark blue footer */
+        color: #fff;
+      }
+
+      footer p {
+        margin-bottom: 0.5em;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #f39c12;
+      }
+
+      /* Show navigation on desktop and hide only on mobile */
+      @media (max-width: 768px) {
+        nav {
+          display: none; /* Hide the navigation only on mobile */
+        }
+
+        .menu-toggle {
+          display: none; /* Hide hamburger button */
+        }
+
+        .hero h1 {
+          font-size: 2em; /* Smaller font size for mobile */
+        }
+
+        .hero p {
+          font-size: 1em; /* Adjusted for better readability on mobile */
+        }
+
+        .btn {
+          width: 90%; /* Full width on mobile for better touch target */
+          padding: 10px 20px;
+          font-size: 1em;
+        }
+
+        /* Adjust the logo grid for mobile */
+        .logo-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.8em; /* Further reduce the font size */
+        }
+
+        .hero p {
+          font-size: 0.9em;
+        }
+
+        .btn {
+          padding: 10px;
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="https://cdn.prod.website-files.com/6697d10a891d3b0b8f8a6628/66e46d593690b50c9d3e4989_DataCortex.png"
+            alt="DataCortex Logo"
+          />
+          <h1>DataCortex</h1>
+        </div>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Powering Innovation with AI & Cloud Solutions</h1>
+        <p>
+          Accelerate your business growth with DataCortex—your trusted partner for AI, machine learning, and cloud solutions.
+        </p>
+        <a href="#services" class="btn">Discover How We Can Drive Your Success</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About DataCortex</h2>
+        <p>
+          At <strong>DataCortex</strong>, we transform complex data into actionable insights. By leveraging advanced data science, AI, and cloud technologies, we empower businesses to make data-driven decisions that drive scalable growth. Our solutions are built for security, flexibility, and long-term success.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p>
+          Discover our AI-powered and cloud-enabled solutions designed to turn data into a strategic asset. Each service is tailored to help you scale, optimize operations, and fuel long-term business success:
+        </p>
+        <div class="services-list">
+          <div class="services-item">
+            <h3>Data Analytics</h3>
+            <p>
+              Turn your data into valuable insights that improve decision-making, enhance efficiency, and promote innovation—optimized for scalability in cloud environments.
+            </p>
+          </div>
+          <div class="services-item">
+            <h3>Machine Learning & AI</h3>
+            <p>
+              Harness the power of AI and machine learning to predict trends, optimize performance, and automate key processes. Integrate seamlessly with cloud platforms for real-time decision-making and intelligent automation.
+            </p>
+          </div>
+          <div class="services-item">
+            <h3>Cloud Integration</h3>
+            <p>
+              Build a secure, scalable cloud infrastructure with our expert integration services. Our cloud integration ensures flexibility, adaptability, and future-proofing for your business operations.
+            </p>
+          </div>
+          <div class="services-item">
+            <h3>Digital Transformation Projects</h3>
+            <p>
+              Guide your business through digital transformation with AI, machine learning, and advanced analytics. From strategy to implementation, we offer end-to-end solutions that fuel innovation and open up new opportunities for growth.
+            </p>
+          </div>
+          <div class="services-item">
+            <h3>Consulting & Strategy</h3>
+            <p>
+              Partner with us to develop data-driven strategies tailored to your business goals. Our consulting services help you identify opportunities, design customized AI solutions, and create long-term strategies for success in the digital age.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Our Projects</h2>
+        <p>
+          We collaborate with businesses across industries to create AI-powered, cloud-enabled solutions that deliver measurable impact. Here are some examples of how we drive innovation and scale success:
+        </p>
+        <div class="projects-grid">
+          <div class="projects-item">
+            <h3>Innovative Data Strategies</h3>
+            <p>
+              Implemented cloud-based analytics and AI in the energy sector, driving a 15% revenue increase through operational optimization.
+            </p>
+          </div>
+          <div class="projects-item">
+            <h3>Enhanced Customer Engagement</h3>
+            <p>
+              Leveraged advanced AI and cloud-powered analytics in retail, boosting sales by 20% and improving customer retention.
+            </p>
+          </div>
+          <div class="projects-item">
+            <h3>Smart Product Recommendations</h3>
+            <p>
+              Developed an AI-driven chatbot for retail, providing dealers with accurate, real-time product recommendations that increased conversions.
+            </p>
+          </div>
+          <div class="projects-item">
+            <h3>Power Outage Management Platform</h3>
+            <p>
+              Created a real-time, cloud-hosted API platform to track and manage power outages, reducing downtime with seamless integration.
+            </p>
+          </div>
+          <div class="projects-item">
+            <h3>Comprehensive Application Development</h3>
+            <p>
+              Developed a secure, scalable application for a renewable energy company, enhancing operational efficiency through cloud-based management.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clients">
+      <div class="container">
+        <h2>
+          Unlock the power of data—businesses around the world are scaling success with our AI and cloud solutions. Yours could be next.
+        </h2>
+        <div class="logo-grid">
+          <img src="https://uploads-ssl.webflow.com/5e60f4d5dcb1b6dbd9e2a3d7/5e624b5c7b1e834471d49a36_bf-logo.svg" alt="Brainsfeed Logo" />
+          <img src="https://cdn.prod.website-files.com/631feb537248352ac4cce713/632bf7ccc6c605533bd51502_Lynk%20purple%20logo.png" alt="Lynk Global Logo" />
+          <img src="https://www.weknow.network/images/Logo.svg" alt="Weknow Network Logo" />
+          <img src="https://www.kubro.net/imgs/roi_logo_trans.webp" alt="Robotic Online Intelligence Logo" />
+          <img src="https://lumprodsta.blob.core.windows.net/prodcontainer/assets/icons/LuminousLogoBlue.webp" alt="Luminous Logo" />
+          <img src="https://cdn.prod.website-files.com/64acc1670486f7df09be2423/661b2408122a164fb65771a9_Kuration%20AI%20black%20%2B%20purple.svg" alt="Kuration AI Logo" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          Ready to take your business to the next level with AI and cloud solutions? Get in touch with DataCortex today and discover how we can help you transform your data into strategic growth.
+        </p>
+        <p>
+          <strong>Email:</strong> contact@datacortex.in
+        </p>
+      </div>
+    </section>
+
+<footer>
+  <div class="container">
+    <p>
+      &copy; 2024 DataCortex – Driving AI and cloud-powered innovation. All rights reserved.
+    </p>
+    <p>
+      <a href="https://madewithloveinindia.org" target="_blank">Made with <span aria-label="Love" style="color: #f43f5e">&hearts;</span> in India</a>
+    </p>
+    <p>
+      <a href="https://www.datacortex.in/terms-and-conditions.html" target="_blank">Terms and Conditions</a> | 
+      <a href="https://www.datacortex.in/privacy-policy.html" target="_blank">Privacy Policy</a> | 
+      <a href="https://www.datacortex.in/cancellation-and-refund-policy.html" target="_blank">Cancellation and Refund Policy</a> | 
+      <a href="https://www.datacortex.in/shipping-and-delivery.html" target="_blank">Shipping and Delivery</a> | 
+      <a href="https://www.datacortex.in/contact-us.html" target="_blank">Contact Us</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

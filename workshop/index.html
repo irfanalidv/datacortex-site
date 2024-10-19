@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridging the Gap: Industry-Ready Skills & LLM Engineering</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333333;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-image-url') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+
+        .workshop-date {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: #e67e22;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Container for sections */
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #2a5298;
+        }
+
+        /* Learning Section */
+        .learning-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .learning-section .outcomes {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .outcome-item {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1 1 calc(33% - 40px);
+            margin-bottom: 20px;
+        }
+
+        .outcome-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .outcome-item h3 {
+            font-size: 1.5em;
+            color: #2a5298;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .outcome-item p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .icon-container {
+            margin-bottom: 15px;
+        }
+
+        .outcome-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Instructors Section */
+        .people-section {
+            background-color: #f0f0f0;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .people-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .person {
+            text-align: center;
+            flex: 1 1 calc(33% - 40px);
+            margin-bottom: 20px;
+        }
+
+        .person img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .person h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: #2a5298;
+        }
+
+        .person p {
+            font-size: 1em;
+            color: #777;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .testimonial {
+            font-size: 1.3em;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        /* Agenda Section */
+        .agenda-section {
+            background-color: white;
+            padding: 50px;
+        }
+
+        .agenda-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .agenda-item {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .agenda-item h3 {
+            font-size: 1.4em;
+            color: #2a5298;
+            margin-bottom: 10px;
+        }
+
+        .agenda-item p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .agenda-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Cost Section */
+        .cost-section {
+            background-color: #f0f0f0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cost-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+
+        .cost {
+            font-size: 2em;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .btn-register {
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-register:hover {
+            background-color: #e67e22;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Payment Section */
+        .payment-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 1400px; /* Increased maximum width for large screens */
+            margin: 0 auto;
+        }
+        
+        .payment-section h3 {
+            font-size: 2.5em; /* Increase font size for laptops */
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .payment-section iframe {
+            border: none;
+            width: 100%;
+            height: 900px; /* Increased height for all screens */
+            max-width: 1000px; /* Increased width for laptops and desktops */
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive Design for Tablet */
+        @media (max-width: 768px) {
+            .payment-section iframe {
+                height: 700px; /* Increased height for tablets */
+                max-width: 800px; /* Increased width for tablets */
+            }
+        
+            .payment-section h3 {
+                font-size: 2em; /* Adjust heading size for better fit */
+            }
+        
+            .payment-section {
+                padding: 30px 15px;
+                max-width: 100%;
+            }
+        }
+        
+        /* Responsive Design for Mobile */
+        @media (max-width: 480px) {
+            .payment-section iframe {
+                height: 600px; /* Height adjustment for mobile */
+                max-width: 100%; /* Full width on mobile screens */
+            }
+        
+            .payment-section h3 {
+                font-size: 1.5em; /* Adjust heading size for mobile */
+            }
+        
+            .payment-section {
+                padding: 20px 10px;
+                max-width: 100%;
+            }
+        }
+        
+        /* Styling Enhancements */
+        .payment-section h3 {
+            font-weight: 600;
+            color: #2C3E50;
+        }
+        
+        .payment-section iframe:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            justify-items: center; /* Centers the items horizontally */
+            align-items: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px;
+            background-color: #fff;
+        }
+
+        .faq-section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+
+        .faq {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .faq h3 {
+            font-size: 1.6em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Certificate Section */
+        .certificate-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .certificate-section h2 {
+            font-size: 2.5em;
+            color: #2a5298;
+            margin-bottom: 30px;
+        }
+
+        .certificate-section img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1b2838;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .btn-primary {
+                width: 100%;
+            }
+
+            .outcomes {
+                flex-direction: column;
+            }
+
+            .outcome-item {
+                width: 100%;
+            }
+
+            .people-container {
+                flex-direction: column;
+            }
+
+            .gallery-grid {
+                flex-direction: column;
+            }
+
+            .testimonial-slider {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 80px 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .btn-primary {
+                font-size: 1em;
+            }
+
+            .outcome-item h3 {
+                font-size: 1.3em;
+            }
+
+            .agenda-item h3 {
+                font-size: 1.2em;
+            }
+
+            .faq-section h2, .certificate-section h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bridging the Gap: Industry-Ready Skills & LLM Engineering</h1>
+    <p>Learn how to build practical skills for industry with AI and LLM technology</p>
+    <div class="workshop-date">Workshop Date: November 16, 2024</div>
+    <a href="#register" class="btn-primary">Join the Workshop</a>
+</header>
+
+<section class="learning-section container" id="about">
+    <h2 class="section-title">What You Will Learn</h2>
+    <div class="outcomes">
+        <div class="outcome-item">
+            <div class="icon-container">
+                <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/6712bff80c7fcf8155da4a6e_intelligent-system.png" alt="LLM Engineering Icon" class="outcome-icon">
+            </div>
+            <h3>LLM Engineering</h3>
+            <p>Gain a hands-on understanding of building generative AI-based chatbot interfaces and Large Language Model (LLM) engineering.</p>
+        </div>
+        <div class="outcome-item">
+            <div class="icon-container">
+                <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/6712c067d6a28d0aafd1e3ac_skills.png" alt="Industry-Ready Skills Icon" class="outcome-icon">
+            </div>
+            <h3>Industry-Ready Skills</h3>
+            <p>Learn the key skills that industries are looking for, focusing on self-development and continuous learning strategies.</p>
+        </div>
+        <div class="outcome-item">
+            <div class="icon-container">
+                <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/6712c0eb0a5384cc86a50cfe_self-service.png" alt="Self-Nurturing Ecosystem Icon" class="outcome-icon">
+            </div>
+            <h3>Self-Nurturing Ecosystem</h3>
+            <p>Develop frameworks for creating a self-nurturing ecosystem for holistic personal and professional growth.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cost-section" id="cost">
+    <h2 class="section-title">Cost to Attend</h2>
+    <div class="cost">₹1500.00</div>
+    <a href="#register" class="btn-register">Register Now</a>
+</section>
+
+<section class="payment-section">
+    <h3>Make a Payment</h3>
+    <iframe src="https://rzp.io/rzp/datacortex"></iframe>
+</section>
+    
+<section class="gallery-section" id="gallery">
+    <h2 class="section-title">Workshop Gallery</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300" alt="Workshop Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300" alt="Workshop Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300" alt="Workshop Image 3">
+        </div>
+    </div>
+</section>
+
+<section class="people-section container" id="instructors">
+    <h2 class="section-title">Meet the Workshop Instructors</h2>
+    <div class="people-container">
+        <div class="person">
+            <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/670a2cde7d7bb0d8dc0562ad_Irfan-.png" alt="Instructor 1">
+            <h3>Md Irfan Ali</h3>
+            <p>Founder & Chief Data Scientist at DataCortex</p>
+        </div>
+        <div class="person">
+            <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/670a2bae05093cd9e4b30ffe_Tashi.jpg" alt="Instructor 2">
+            <h3>Tashi Dhondup</h3>
+            <p>Data Engineer at Monlam AI</p>
+        </div>
+        <div class="person">
+            <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/670a2baecce08c144229ef99_Parth.jpg" alt="Instructor 3">
+            <h3>Parth Madaan</h3>
+            <p>Data Engineer at Luminous</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonial-section">
+    <h2 class="section-title">What Past Participants Say</h2>
+    <div class="testimonial-slider">
+        <div class="testimonial">
+            "This workshop was an eye-opener! The hands-on sessions with LLM-based chatbots were invaluable, and the practical industry insights were exactly what I needed to bridge my skills gap." - Rajat Agarwal
+        </div>
+        <div class="testimonial">
+            "Incredible instructors, practical knowledge, and an engaging experience—definitely recommend it!" - Ankur Maheshwari
+        </div>
+    </div>
+</section>
+
+<section class="agenda-section container" id="agenda">
+    <h2 class="section-title">Workshop Agenda</h2>
+    <div class="agenda-list">
+        <div class="agenda-item">
+            <h3>Welcome & Introduction</h3>
+            <p>A brief introduction to the workshop and an overview of the day’s objectives.</p>
+        </div>
+        <div class="agenda-item">
+            <h3>Understanding the Gap Between Academia & Industry</h3>
+            <p>Explore the differences between academic teachings and the real-world skills needed in industry, through a TED-like talk.</p>
+        </div>
+        <div class="agenda-item">
+            <h3>Best Practices for Self-Development</h3>
+            <p>Learn actionable strategies for continuous learning, self-improvement, and asking the right questions.</p>
+        </div>
+        <div class="agenda-item">
+            <h3>Practical Demonstration: LLM-Based Chatbot Interface</h3>
+            <p>A live demonstration on building a generative AI chatbot using LLM technology. Gain hands-on insights into AI and LLM engineering.</p>
+        </div>
+        <div class="agenda-item">
+            <h3>Building a Self-Nurturing Ecosystem for Growth</h3>
+            <p>Strategies for creating a self-sustaining learning ecosystem, along with frameworks for ongoing machine learning projects and personal development.</p>
+        </div>
+        <div class="agenda-item">
+            <h3>Q&A and Discussion</h3>
+            <p>Engage in an interactive discussion and get answers to your questions. A great chance to clarify concepts and explore real-world applications.</p>
+        </div>
+    </div>
+</section>
+
+<section class="certificate-section">
+    <h2 class="section-title">Certificate of Achievement</h2>
+    <p>Participants who successfully complete the workshop will receive a certificate of achievement to showcase their skills.</p>
+    <img src="https://cdn.prod.website-files.com/611d52b972f20b6531201b56/6712bd380959927114a3492a_Certificate%20of%20Achievement.png" alt="Certificate of Achievement">
+</section>
+
+<section class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq">
+        <h3>What do I need to bring?</h3>
+        <p>Just bring your laptop, a notebook, and an eagerness to learn. We will provide all necessary software and resources during the workshop.</p>
+    </div>
+    <div class="faq">
+        <h3>How long is the workshop?</h3>
+        <p>The workshop is one day long, with multiple hands-on sessions and discussions throughout the day.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Bridging the Gap Workshop. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
